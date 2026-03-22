@@ -1,29 +1,8 @@
 # Laboratorio 2A — Página Personal
 **Camila Rodríguez Águila | C36624**
 
-Sitio web personal estático desarrollado con HTML y CSS puro como parte del laboratorio 2A.
+Sitio web personal desarrollado con HTML y CSS puro como parte del laboratorio 2A.
 
----
-
-## Estructura del proyecto
-
-```
-Laboratorio2A_C36624/
-├── index.html              # Página principal
-├── style.css               # Estilos de la página principal
-├── Laya.jpg                # Foto de Laya
-├── html/
-│   ├── Contacto.html       # Página de contacto
-│   ├── Trabajos.html       # Página de trabajos y proyectos
-│   └── Pasatiempos.html    # Página de pasatiempos
-├── css/
-│   └── pages.css           # Estilos compartidos de las subpáginas
-└── imgs/
-    ├── Página Principal.png
-    ├── Contacto.png
-    ├── Trabajos.png
-    └── Pasatiempos.png
-```
 
 ---
 
