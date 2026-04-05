@@ -19,7 +19,7 @@
                     <td>{{ country.language }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm" v-on:click="eliminarPais(index)">Eliminar</button>
+                        <button class="btn btn-danger btn-sm" v-on:click="eliminarPais(index)">Eliminar</button> // Agrega el evento click para eliminar el país
                     </td>
                 </tr>
             </tbody>
@@ -43,7 +43,7 @@ export default {
     },
     methods: {
         eliminarPais(index) {
-            this.countries.splice(index, 1);
+            this.countries.splice(index, 1); // Elimina el país del arreglo utilizando el índice
         },
     },
 }
