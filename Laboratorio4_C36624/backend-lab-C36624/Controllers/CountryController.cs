@@ -1,15 +1,25 @@
+using backend_lab_C36624.Models;
+using backend_lab_C36624.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend_lab_C36624.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class CountryController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly CountryService countryService;
+
+        public CountryController()
         {
-            return "Hola Mundo";
+            countryService = new CountryService();
+        }
+
+        [HttpGet]
+        public List<CountryModel> Get()
+        {
+            var paises = countryService.GetCountries();
+            return paises;
         }
     }
 }
