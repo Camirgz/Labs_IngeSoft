@@ -1,10 +1,18 @@
-
 <template>
     <div class="container mt-5">
         <h1 class="display-4 text-center">Lista de países</h1>
-        <table
-            class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
-        >
+
+        <div class="row justify-content-end">
+            <div class="col-2">
+                <a href="/country">
+                    <button type="button" class="btn btn-outline-secondary float-right">
+                        Agregar país
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -20,7 +28,7 @@
                     <td>{{ country.language }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm" v-on:click="eliminarPais(index)">Eliminar</button> 
+                        <button class="btn btn-danger btn-sm" v-on:click="deleteCountry(index)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -30,37 +38,29 @@
 
 <script>
     import axios from "axios";
+
     export default {
         name: 'CountriesList',
         data() {
             return {
-                countries: [
-                    { name: "Costa Rica", continent: "América", language: "Español" },
-                    { name: "Japón", continent: "Asia", language: "Japonés" },
-                    { name: "Corea del Sur", continent: "Asia", language: "Coreano" },
-                    { name: "Italia", continent: "Europa", language: "Italiano" },
-                    { name: "Alemania", continent: "Europa", language: "Alemán" },
-                ],
+                countries: [],
             };
         },
         methods: {
-            eliminarPais(index) {
-                this.countries.splice(index, 1); // Elimina el país del arreglo utilizando el índice
+            deleteCountry(index) {
+                this.countries.splice(index, 1);
             },
             getCountries() {
-                axios.get("http://localhost:5218/api/country").then((response) => {
+                axios.get("http://localhost:5218/api/Country").then((response) => {
                     this.countries = response.data;
-                }).catch((error) => {
-                    console.error("Error fetching countries:", error);
                 });
             },
         },
         created: function () {
-            this.getCountries();    
-        }
+            this.getCountries();
+        },
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
 </style>
