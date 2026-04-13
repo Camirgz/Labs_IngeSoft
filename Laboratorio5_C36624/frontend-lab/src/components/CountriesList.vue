@@ -48,8 +48,10 @@
                 this.countries.splice(index, 1); // Elimina el país del arreglo utilizando el índice
             },
             getCountries() {
-                axios.get("https://localhost:7019/api/country").then((response) => {
+                axios.get("http://localhost:5218/api/country").then((response) => {
                     this.countries = response.data;
+                }).catch((error) => {
+                    console.error("Error fetching countries:", error);
                 });
             },
         },
